@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy for Pet</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="Shop.js"></script>
+
+    <link rel="stylesheet" href="Shop.css">
+
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="Shop.html">
+                <img src="img/Logo_shop.png" class="logonav">
+            </a>
+            <div class="nav-profile">
+                <p class="nav-profile-name">Yummy for Pet</p>
+                <div onclick="openCart()" style="cursor: pointer;" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping" style="color: #ffffff;"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="Search something...">
+
+            <a onclick="searchproduct('all')" class="sidebar-items">
+                All Product
+            </a>
+            <a href="Cat.html" onclick="searchproduct('Cat Food')" class="sidebar-items">
+                Cat Food
+            </a>
+            <a href="Dog.html" onclick="searchproduct('Dog Food')" class="sidebar-items">
+                Dog Food
+            </a>
+           
+        </div>
+        <div id="productlist" class="product">
+            
+        </div>
+    </div>
+
+
+    <div id="modalDesc" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+           <h2>Detail</h2>
+           <br>
+           <div class="modaldesc-content">
+            <img id="mdd-img" class="modaldesc-img" src="img/KF_1.png" alt="">
+            <div class="modaldesc-detail">
+              <p id="mdd-name" style="font-size: 1.5vw;">Kaniva Mother Cat & Kitten</p>
+              <p id="mdd-price" style="font-size: 1.5vw;">1290 THB</p>
+              <br>
+              <p id="mdd-desc" style="color: #adadaa;">คานิว่า อาหารเม็ด สูตรสำหรับแม่แมว และลูกแมวอายุ 3 สัปดาห์ - 1 ปี</p>
+              <br>
+              <div class="btn-control">
+                <button onclick="closeModal()" class="btn">
+                    Close
+                </button>
+                <button onclick="addtocart()" class="btn btn-buy">
+                    Add to cart
+                </button>
+              </div>
+            </div>
+           </div>
+        </div>
+        
+    </div>
+
+
+    <div id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+           <h2>My Cart</h2>
+           <br>
+           <div id="mycart" class="cartlist">
+                
+           </div>
+
+       <div class="btn-control">
+            <button onclick="closeModal()" class="btn">
+                Cancel
+            </button>
+            <button class="btn btn-buy">
+                Buy
+            </button>
+       </div>
+
+
+   </div>
+           
+           
+        </div>
+        
+    </div>
+
+
+    
+</body>
+</html>
